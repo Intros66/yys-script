@@ -80,21 +80,18 @@ def explore():
             function.randomDelay(0.3, 0.6)
             clickFunction(sp, res, box)
             function.randomDelay(0.3, 0.6)
-        # 点地板
-        elif function.match(pic, floorPic).max() > 0.75:
-            res = function.match(pic, floorPic)
-            sp = floorPic.shape
-            clickFunction(sp, res, box)
-            function.randomDelay(0.3, 0.6)
-            clickFunction(sp, res, box)
-            function.randomDelay(0.3, 0.6)
         # 战斗图标
         elif function.match(pic, fightPic).max() < 0.70:
+            if function.match(pic, floorPic).max() > 0.70:
+                es = function.match(pic, floorPic)
+                sp = floorPic.shape
+                clickFunction(sp, res, box)
+                function.randomDelay(0.6, 1)
             if function.match(pic, di28Pic).max() > 0.75:
                 res = function.match(pic, di28Pic)
                 sp = exitPic.shape
                 clickFunction(sp, res, box)
-                function.randomDelay(1, 1.5)
+                function.randomDelay(1.5, 2)
             # 退出
             if function.match(pic, exitPic).max() > 0.75:
                 res = function.match(pic, exitPic)
@@ -106,7 +103,7 @@ def explore():
                 res = function.match(pic, quedingPic)
                 sp = quedingPic.shape
                 clickFunction(sp, res, box)
-                function.randomDelay(0.6, 0.8)
+                function.randomDelay(0.6, 1)
             # 探索
             if function.match(pic, tingyuanPic).max() > 0.75:
                 res = function.match(pic, tingyuanPic)

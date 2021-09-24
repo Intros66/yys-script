@@ -15,13 +15,18 @@ def clickFunction(sp, res, box):
     function.clickLeftCur()
 
 
-def yuling():
+def liaoliCount(num):
+    i = 0;
     while True:
+        if i == num:
+            break
         box = function.getWindowInfo()
         pic = function.screenShot(box)
         print(function.match(pic, challengePic).max())
         function.randomDelay(0.2, 0.5)
         if function.match(pic, challengePic).max() > 0.75:
+            i = i + 1;
+            print('第',i,'次~')
             print('挑战开始')
             res = function.match(pic, challengePic)
             print('res==>', res)
@@ -53,8 +58,9 @@ def yuling():
             sp = xuanPic.shape
             clickFunction(sp, res, box)
             function.randomDelay(0.3, 0.8)
-
+        
 
 
 if __name__ == '__main__':
-    yuling()
+    num = int(input('请输入想要刷的次数： '))
+    liaoliCount(num)

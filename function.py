@@ -38,7 +38,7 @@ def getWindowInfo():
     win32gui.SetForegroundWindow(handle)
     x1, y1, x2, y2 = win32gui.GetWindowRect(handle)  # 获得窗口坐标
     box = x1, y1, x2, y2
-    print(x1, y1, x2, y2)
+    # print(x1, y1, x2, y2)
     return box
 
 
@@ -59,7 +59,7 @@ def match(img1, img2):
     # img1为即时截图，
     # img2为匹配图
     res = cv2.matchTemplate(img1, img2, cv2.TM_CCOEFF_NORMED)
-    print(res)
+    # print(res)
     return res
 
 
